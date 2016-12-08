@@ -12,7 +12,7 @@ $(function(){
 			data.angularJs.forEach(function(item){
 				$("#skill_int1 ul").append("<li>"+item+"</li>");
 			});
-			data.html/css.forEach(function(item){
+			data.html.forEach(function(item){
 				$("#skill_int2 ul").append("<li>"+item+"</li>");
 			});
 			data.css.forEach(function(item){

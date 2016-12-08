@@ -201,7 +201,7 @@ aside b {
 	height: 100%;
 	position: relative;
 	overflow: hidden;
-	background: url(../image/bg.jpg) no-repeat center top;
+	background:#999999 url(../image/bg1.jpg) no-repeat center top;
 	background-size: 100% 100%;
 }
 #home_content,
@@ -264,7 +264,7 @@ aside b {
 	box-shadow: 0 0 10px #FF0000;
 }
 img#home_photo1{
-
+	background: deepskyblue;
 }
 img#home_photo2 {
 	opacity: 0;

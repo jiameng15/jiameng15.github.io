@@ -1152,3 +1152,18 @@ footer div a:hover {
 	animation: b_to_t 1s;
 	visibility: visible;
 }
+.other_content{
+	position: fixed;
+	bottom: 20%;
+	right: 8%;
+
+}
+.other_content .download{
+	display: block;
+	/*border:2px solid #1e6bb8;*/
+	/*border-radius: 5px;*/
+	/*color: darkblue;*/
+	/*font-weight: bold;*/
+	/*text-align: center;*/
+	/*background: deepskyblue;*/
+}

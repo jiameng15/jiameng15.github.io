@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移入移出</title>
+    <style>
+        .blue{
+            background: skyblue;
+            color: #fff;
+        }
+        .darkblue{
+            background: deepskyblue;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="blue">aaa</li>
+        <li class="blue">bbb</li>
+        <li class="blue">ccc</li>
+        <li class="blue">ddd</li>
+    </ul>
+
+    <script>
+        var ali = document.getElementsByTagName("li");
+        for(var i =0;i<ali.length;i++){
+            ali[i].onmouseover=function (){
+                this.className = "darkblue";
+            }
+            ali[i].onmouseout = function () {
+                this.className ="blue";
+            }
+        }
+
+        function specialArray(){
+            var values = [];
+            values.push.apply(values,arguments);
+            return values;
+        }
+        var colors = new specialArray("red","blue","black");
+        console.log(colors);
+    </script>
+</body>
+</html>

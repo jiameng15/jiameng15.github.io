@@ -55,7 +55,7 @@ $(function(){
 				});
 			});
 			$("aside a").eq(0).addClass("selected").siblings().removeClass("selected");
-			console.log("%c您好，感谢您阅读贾瞢的简历。\n如果您对现在的我感兴趣，欢迎您的来信^_^ \n联系方式(0)18098803386/jiameng15@126.com","color: wheat;background:#000;font-size:20px;");
+			console.log("%c您好，感谢您阅读贾瞢的简历。\n如果您对现在的我感兴趣，欢迎您的来信^_^ \n联系方式:\n(0)18098803386\njiameng15@126.com","color: wheat;background:#000;font-size:20px;text-shadow:2px 2px 5px yellow;");
 		},
 		afterLoad: function(anchorLink,index){
 			if(index==1){
@@ -206,6 +206,7 @@ $(function(){
 		$("#exp_list_to").stop(true,false).fadeTo(700,0.1);
 	});
 	var page=1;
+    //明细
 	$("#exp_timeline a").click(function(){
 		$("#exp_list_content").stop(true,false).animate({left:-$(".exp_list").width()*$(this).index()},2000,"easeInOutCubic");
 		page=$(this).index()+1;

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #fall {
+            position: relative;
+            margin: 0 auto;
+            list-style: none;
+            height: 150%;
+        }
+
+        #fall li {
+            position: absolute;
+            border: 1px solid lightgray;
+            width: 190px;
+            padding: 10px;
+            transition: all 2s;
+            opacity: 0;
+        }
+
+        #fall li img {
+            width: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+<ul id="fall">
+
+</ul>
+
+<script>
+    var images = ["img/1.jpg", "img/2.jpg",
+        "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg",
+        "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg",
+        "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg",
+        "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg",
+        "img/19.jpg", "img/20.jpg"
+    ];
+
+    //获取瀑布流容器
+    var oFall = document.getElementById("fall");
+    //获取li
+    var oLis = oFall.getElementsByTagName("li");
+
+    //每个li的宽度
+    var liWidth = 0;
+
+    //每个li之间的宽度
+    var marginRight = 10;
+
+    //每行之间高度
+    var marginTop = 10;
+
+    //循环加载图片
+    function loadimg() {
+        for (var i = 0; i < images.length; i++) {
+            var newli = document.createElement("li");
+//					var newimage = new Image();
+//					newimage.src = images[i];
+//					newli.appendChild(newimage);
+            //下面这句话可代替上面三句话
+            newli.innerHTML = "<img src=" + images[i] + ">";
+            oFall.appendChild(newli);
+        }
+
+    }
+    loadimg();
+
+    //生成瀑布流
+    function createfall() {
+        //获得列数
+        var cols = getCols();
+
+        //获取每个li的高度
+        var liHeights = [];
+        for (var i = 0; i < oLis.length; i++) {
+            liHeights[i] = oLis[i].offsetHeight;
+        }
+
+        //存储当前每列的高度
+        var nowHeights = [];
+
+        //生成第一行
+        for (var i = 0; i < cols; i++) {
+            oLis[i].style.top = "0px";
+            oLis[i].style.left = liWidth * i + "px";
+            oLis[i].style.opacity = 1;
+
+            nowHeights[i] = liHeights[i];
+        }
+
+        //添加其他的数据块
+        for (var i = cols; i < oLis.length; i++) {
+            //取最短列下标
+            var minIndex = getMinIndex();
+
+            oLis[i].style.top = nowHeights[minIndex] + marginTop + "px";
+            oLis[i].style.left = minIndex * liWidth + "px";
+            oLis[i].style.opacity = 1;
+            nowHeights[minIndex] = nowHeights[minIndex] + marginTop + liHeights[i];
+        }
+
+        //获取最短列下标
+        function getMinIndex() {
+            var minHeight = nowHeights[0];
+            var minIndex = 0;
+            for (var i = 0; i < nowHeights.length; i++) {
+                if (minHeight > nowHeights[i]) {
+                    minHeight = nowHeights[i];
+                    minIndex = i;
+                }
+            }
+            return minIndex;
+            console.log(minIndex);
+        }
+
+    }
+    //获取列数
+    function getCols() {
+        //获取页面的宽度
+        var pageWidth = document.documentElement.clientWidth;
+
+        //获取每个数据块的宽度
+        liWidth = oLis[0].offsetWidth + marginRight;
+
+        //计算列数
+        var cols = Math.floor(pageWidth / liWidth);
+
+        //设置容器的宽度
+        oFall.style.width = (cols * liWidth - marginRight) + "px";
+
+        return cols;
+    }
+    //当滚动条滚动到底部
+    window.onscroll = function () {
+
+        //获取滚动条的高度
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+        //获取窗体可见高度
+        var winHeight = document.documentElement.clientHeight;
+
+        //获取页面的整体高度
+
+        var pageHeight = document.documentElement.scrollHeight;
+
+        //判断滚动条是否到底部
+        if ((scrollTop + winHeight) / pageHeight > 0.85) {
+//					var imageLen = images.length;
+            loadimg();
+            createfall();
+
+
+        }
+    }
+
+    window.onload = function () {
+        createfall();
+    }
+    window.onresize = function () {
+        createfall();
+    }
+</script>
+</body>
+
+</html>

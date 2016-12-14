@@ -273,3 +273,19 @@ $(function(){
 		$("#exp_content").css({"padding-top":($(".active").height()-$("#exp_content").height())/6});
 		$("#demo_content").css({"padding-top":($(".active").height()-$("#demo_content").height())/6});
 	});
+
+//particleground color
+document.addEventListener('DOMContentLoaded', function () {
+	particleground(document.getElementById('particles'), {
+		dotColor: 'skyblue',
+		lineColor: 'lightblue'
+	});
+	// var intro = document.getElementById('intro');
+	// intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+}, false);
+//loading progress contourl
+Pace.on('hide',function () {
+	if(location.href.indexOf("#page2")<0){
+		// location.href += "#page2";
+	}
+})	

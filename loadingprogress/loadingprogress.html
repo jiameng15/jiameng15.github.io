@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>loading progress</title>
+    <script>
+        paceOptions = {
+            // Disable the 'elements' source
+            elements: true,
+
+            // Only show the progress on regular and ajax-y page navigation,
+            // not every request
+            restartOnRequestAfter: false
+        }
+    </script>
     <script src="pace.min.js"></script>
     <link rel="stylesheet" href="pace_4.min.css">
+    <script>
+
+        Pace.on('hide',function () {
+            console.log('done');
+            document.body.style.opacity = 1;
+        })
+
+    </script>
+    <style>
+        body{
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
-<dom id="1"></dom>
-<dom id="2"></dom>
-<dom id="3"></dom>
+<dom id="1">1</dom>
+<dom id="2">2</dom>
+<dom id="3">3</dom>
 <dom id="4"></dom>
 <dom id="5"></dom>
 <dom id="6"></dom>
@@ -107,7 +130,7 @@
 <dom id="98"></dom>
 <dom id="99"></dom>
 <dom id="100"></dom>
-    
+
 
 </body>
 </html>

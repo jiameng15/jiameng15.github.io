@@ -5,15 +5,17 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="keywords" content="web前端,html5,jiameng15,web前端个人简历,前端开发" />
+    <script src="js/pace.min.js"></script>
+    <link rel="stylesheet" href="css/pace_4.min.css">
+    <script src="js/jquery.particleground.min.js"></script>
     <meta name="description" content="贾瞢的web前端程序员简历">
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" href="css/component.css" />
 	<link rel="stylesheet" href="css/index.css" />
 	<title>贾瞢，web前端程序喵</title>
-    <script src="js/pace.min.js"></script>
-    <link rel="stylesheet" href="css/pace_4.min.css">
 </head>
+<div id="particles"></div>
 <body>
 <!-- header navigation -->
 <header>
@@ -35,13 +37,16 @@
 </header>
 <!-- header navigation end -->
 <!-- aside navigation -->
-<aside>
-		<a href="#page1"><b>首页</b></a>
-		<a href="#page2"><b>我</b></a>
-		<a href="#page3"><b>专业技能</b></a>
-		<a href="#page4"><b>我的经历</b></a>
-		<a href="#page5"><b>我的作品</b></a>
-		<a href="#page6"><b>联系我</b></a>
+    <aside>
+        <a href="#page1" style="opacity: 0;"><b></b></a>
+		<a href="#page2" class="star"><b>首页</b></a>
+		<a href="#page3"><b>我</b></a>
+		<a href="#page4"><b>专业技能</b></a>
+		<a href="#page5"><b>我的经历</b></a>
+		<a href="#page6"><b>我的作品</b></a>
+		<a href="#page7"><b>联系我</b></a>
+
+
 </aside>
 <!-- aside navigation end -->
 <!-- home page -->
@@ -367,6 +372,7 @@
     <a id="qq_connection" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=693652582&site=qq&menu=yes"><img src="http://wpa.qq.com/pa?p=2:693652582:51" alt="快来联系我吧" title="快来联系我吧"/></a>
     <a class="download" href="贾瞢web前端.pdf" download="贾瞢web前端.pdf" title="下载纸质简历"><img src="image/download.jpg" alt=""></a>
 </div>
+
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/jquery.fullPage.min.js"></script>
@@ -374,5 +380,7 @@
 <script src="js/cssParser.js"></script>
 <script src="js/modalEffects.js"></script>
 <script src="js/index.js"></script>
+
 </body>
+
 </html>

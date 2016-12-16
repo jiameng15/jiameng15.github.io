@@ -275,17 +275,17 @@ $(function(){
 	});
 
 //particleground color
-document.addEventListener('DOMContentLoaded', function () {
-	particleground(document.getElementById('particles'), {
-		dotColor: 'skyblue',
-		lineColor: 'lightblue'
-	});
+// document.addEventListener('DOMContentLoaded', function () {
+// 	particleground(document.getElementById('particles'), {
+// 		dotColor: 'skyblue',
+// 		lineColor: 'lightblue'
+// 	});
 	// var intro = document.getElementById('intro');
 	// intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
-}, false);
+// }, false);
 //loading progress contourl
-Pace.on('hide',function () {
-	if(location.href.indexOf("#page2")<0){
-		// location.href += "#page2";
-	}
-})	
+// Pace.on('hide',function () {
+// 	if(location.href.indexOf("#page2")<0){
+// 		// location.href += "#page2";
+// 	}
+// })

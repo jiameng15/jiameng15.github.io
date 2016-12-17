@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: wheat;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        html，body {
+            width: 100%;
+            height: 400%;
+        }
+
+        body {
+
+        }
+
+        content {
+            height: 100%;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            background: rgba(22, 25, 25, .5);
+            text-align: center;
+        }
+
+        header h1 {
+        }
+
+        ul {
+
+        }
+
+        li {
+            float: left;
+            margin: 20px 10%;
+            font-size: 20px;
+        }
+
+        li:hover {
+            text-shadow: 2px 2px 5px yellow, -2px -2px 5px red;
+            transition: 1s;
+        }
+
+        .parallax {
+            padding-top: 20%;
+        }
+
+        .parallax.bg1 {
+            background: #1FAEFF url(img/bg.jpg) no-repeat center fixed;
+            background-size: 100% 100%;
+        }
+
+        .parallax.bg2 {
+            background: #21a97e url(img/Gifts.jpg) no-repeat center;
+            background-size: 100% 100%;
+        }
+
+        .parallax.bg3 {
+            background: #AE96EB url(img/dinner.jpg) no-repeat 50% 50% fixed;
+            background-size: 100% 100%;
+        }
+
+        .parallax.bg4 {
+            background: rgba(255, 102, 51, 1) url(img/family.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        content div {
+            width: 100%;
+            height: 25%;
+        }
+
+        article {
+            background: rgba(22, 22, 22, .5);
+        }
+
+        p {
+            margin: 5%;
+        }
+
+        .pt1, .pt2, .pt3, .pt4 {
+            font-size: 50px;
+        }
+
+        .p1, .p2, .p3, .p4 {
+            font-size: 24px;
+        }
+
+        .p1 {
+            text-align: left;
+            width: 20%;
+            height: 30%;
+        }
+
+        .pt2, .p2 {
+            color: #ffaf00;
+        }
+
+        .p2 {
+            width: 35%;
+        }
+
+        .pt3, .pt4 {
+            padding-left: 55%;
+            color: #ff6633;
+        }
+
+        .p3, .p4 {
+            width: 40%;
+            height: 30%;
+            padding-left: 55%;
+            color: #ff6633;
+        }
+
+        .pt4, .p4 {
+            color: lightsalmon;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>视差滚动DEMO</h1>
+    <ul>
+        <li><a href="#eve" onclick="oneclick()">Eve</a></li>
+        <li><a href="#present" onclick="oneclick()">Present</a></li>
+        <li><a href="#dinner" onclick="oneclick()">Dinner</a></li>
+        <li><a href="#family" onclick="oneclick()">Family</a></li>
+    </ul>
+</header>
+<content>
+    <a name="eve"></a>
+    <div class="parallax bg1">
+        <article>
+            <p class="pt1">Christmas Eve</p>
+            <p class="p1">Christmas Eve is the evening or entire day preceding Christmas Day, the festival commemorating
+                the birth of Jesus of Nazareth.</p>
+        </article>
+        <div></div>
+    </div>
+    <a name="present"></a>
+    <div class="parallax bg2">
+        <article>
+            <p class="pt2">Present</p>
+            <p class="p2">Finding the ideal Christmas present can be stressful at this festive time of year, so we
+                thought we would make it easier for you. Whether you're looking for a Secret Santa Present for your
+                friend, a Stocking Filler for the little one or a Christmas present for loved ones, Prezzybox have a
+                great range of gift ideas for all!</p>
+        </article>
+    </div>
+    <a name="dinner"></a>
+    <div class="parallax bg3">
+        <article>
+            <p class="pt3">Dinner</p>
+            <p class="p3">Christmas dinner is a meal traditionally eaten at Christmas. This meal can take place any time
+                from the evening of Christmas Eve to the evening of Christmas Day itself. The meals are often
+                particularly rich and substantial, in the tradition of the Christian feast day celebration, and form a
+                significant part of gatherings held to celebrate Christmas. In some cases, there is a ritual element to
+                the meal related to the religious celebration.</p>
+        </article>
+    </div>
+    <a name="family"></a>
+    <div class="parallax bg4">
+        <article>
+            <p class="pt4">Family</p>
+            <p class="p4">Christmas dinner is a meal traditionally eaten at Christmas. This meal can take place any time
+                from the evening of Christmas Eve to the evening of Christmas Day itself. The meals are often
+                particularly rich and substantial, in the tradition of the Christian feast day celebration, and form a
+                significant part of gatherings held to celebrate Christmas. In some cases, there is a ritual element to
+                the meal related to the religious celebration.</p>
+        </article>
+    </div>
+</content>
+<footer></footer>
+</body>
+</html>

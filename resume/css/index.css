@@ -247,7 +247,7 @@ aside b {
 #demo_content,
 #contact_content {
     margin: 0 auto;
-    width: 1000px;
+    width: 100%;
     height: auto;
 }
 

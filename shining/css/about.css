@@ -1,0 +1,59 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body .wrap{
+	font-family: Arial,sans-serif,Microsoft YaHei;
+}
+.content{
+	width: 100%;
+	margin: 0 auto;
+}
+.map{
+background: url(../img/img_About/world_map.png) center center no-repeat;
+background-color: #e3e3e3;
+padding-bottom: 2em;
+width: 100%;
+}
+.content_text{
+width: 490px;
+padding-top: 100px;
+padding-left: 10px;
+text-align: left;
+}
+.content_wrap h3{
+	font-size: 1.8em;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+.content_wrap p{
+	word-break: break-all;
+	margin-bottom: 20px;
+	font-size: medium;
+	font-weight: lighter;
+	line-height: 2em;
+	padding-bottom: 10px;
+}
+.content_logo{
+margin: 0 auto;
+}
+.content_logo ul{
+	overflow: hidden;
+}
+.content_logo li{
+	float: left;
+	margin-right: 59px;
+	margin-bottom: 10px;
+	height: 75px;
+	text-align: left;
+	list-style: none;
+}
+.content_logo li img{
+	width: 100%;
+}
+@media screen and (max-width:640px) {
+	.content_text{
+		width: 95%;
+		margin: 0 auto;
+	}
+}

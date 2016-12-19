@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Home</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commonFooter.css"/>
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="head">
+				<div class="nav_wrap">
+					<div class="logo">
+						<a href=""><img src="img/img/shininglogo.png" /></a>
+					</div>
+					<ul class="nav">
+						<li>
+							<a href="home.html" class="home">Home</a>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+						</li>
+						<li>
+							<a href="rendering.html">Rendering</a>
+						</li>
+						<li>
+							<a href="3D_Animation.html">3D Animation</a>
+						</li>
+						<li>
+							<a href="bim.html">Bim</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact</a>
+						</li>
+					</ul>
+					<input type="button" name="navButton" id="navButton" value="" />
+				</div>
+				<ul class="hide_nav">
+					<li><a href="home.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="rendering.html">Rendering</a></li>
+					<li><a href="3D_Animation.html">3D Animation</a></li>
+					<li><a href="bim.html">Bim</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="centerWrap">
+					<ul class="row1">
+						<li class="leftImg">
+							<a href="rendering.html"><img src="img/img_Home/home_pic_one.png" class="img1" /><img src="img/img_Home/home_pic_one_h.png" class="img2" /></a>
+						</li>
+						<li class="centerLine"></li>
+						<li class="rightText">
+							<a href="">
+								<h6>RENDERINGS</h6>
+								<p>Masterplan、Public Building、commercial Building、Residential Building、Landscape Design</p>
+							</a>
+						</li>
+					</ul>
+					<ul class="row1 row2">
+						<li class="leftImg">
+							<a href="bim.html"><img src="img/img_Home/home_pic_two.jpg" class="img1" /><img src="img/img_Home/home_pic_two_h.png" class="img2" /></a>
+						</li>	
+						<li class="centerLine"></li>
+						<li class="rightText center_text">
+							<a href="">
+								<h6>BIM</h6>
+								<p>Model Completion、Clash Detection、MEP Integration、Curtain Wall Remedying、BIM Consulting</p>
+							</a>
+						</li>
+						
+					</ul>
+					<ul class="row1 row3">
+						<li class="leftImg">
+							<a href=""><img src="img/img_Home/homes_pic_three.jpg" class="img1" /><img src="img/img_Home/homes_pic_three_h.jpg" class="img2" /></a>
+						</li>
+						<li class="centerLine"></li>
+						<li class="rightText">
+							<a href="3D_Animation.html">
+								<h6>3D ANIMATION</h6>
+								<p>Real estate advertising animation Design scheme Animation Corporate promotional Animation</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footer1"><a href=""><img src="img/img/mail.jpg"/></a></div>
+				<div class="footer2">
+					<div class="footer_wrap">
+					<a href=""><img src="img/img/facebook.jpg" alt="" /></a>
+					<a href=""><img src="img/img/youtube.jpg" alt="" /></a>
+					<a href=""><img src="img/img/linkedln.jpg" alt="" /></a>
+					<a href=""><img src="img/img/twitter.jpg" alt="" /></a>
+					</div>
+				</div>
+				<div class="footer3"><span>Copyright © 1998-2015 shining Group</span></div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commonFooter.js"></script>
+		<script src="js/commonHead.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".row1").on("mouseover", function() {
+					$(".centerLine").eq($(this).index()).css("background-color","rgb(207,219,0)");
+					$(".img1").eq($(this).index()).css("opacity", 0);
+					$(".img2").eq($(this).index()).css("opacity", 1);
+				})
+				$(".row1").on("mouseout", function() {
+					$(".centerLine").eq($(this).index()).css("background-color","rgb(176,176,176)");
+					$(".img1").eq($(this).index()).css("opacity", 1);
+					$(".img2").eq($(this).index()).css("opacity", 0);
+				})
+		
+			})
+		</script>
+	</body>
+
+</html>

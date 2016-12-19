@@ -1,0 +1,264 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.content {
+	font-family: Arial, sans-serif, Microsoft YaHei;
+	width: 100%;
+	background-color: #e5e5e5;
+}
+.content>div {
+	width: 100%;
+	height: 665px;
+}
+body .head {
+	position: fixed;
+	z-index: 1000;
+}
+.space-wrap{
+	max-width: 980px;
+	width: 75%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.space-wrap1>img{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 350px;
+	right: -50px;
+}
+.space1_content{
+	padding-bottom: 4em;
+}
+
+.space-wrap h2{
+	color:#616161;
+	display: inline-block;
+	line-height: 105%;
+	border: 1px solid #616161;
+	border-radius: 6px;
+	font-size: 1.4em;
+	padding: 0 5px;
+	margin-right: 5px;
+}
+.space-wrap h3{
+	display: inline-block;
+	color:#616161;
+	font-size: 1.4em;
+	line-height: 150%;
+	font-weight: normal;
+	}
+	.space-wrap span{
+		display: block;
+		width: 40%;
+		word-break: break-word;
+		margin: 15px 0px;
+		line-height: 1.4em;
+	}
+	.space1_content div{
+		width: 40%;
+		overflow: hidden;
+	}
+		.space1_content div img{
+			width: 33%;
+			float: left;
+		}
+.space2{
+	width: 100%;
+	background-color: white;
+}
+.space2_content div{
+	width: 50%;
+}
+.space2_content div img,.space3_content div img{
+	width: 46%;
+	margin-right: 6px;
+}
+.space2 .space-wrap>img{
+	position: absolute;
+	width: 350px;
+	right: -5px;
+	top: 0;
+}
+.space_content{
+	z-index: 100;
+	padding-top: 173px;
+}
+.space3_content{
+	padding-top: 190px;
+	padding-left: 19.5em;
+	padding-bottom: 15em;
+}
+.space3 .space-wrap>img{
+	position: absolute;
+	bottom: 0;
+	width: 400px;
+	left: -95px;
+}
+.space4{
+	background-color: white;
+}
+.space4_content{
+	position: relative;
+	z-index: 100;
+	padding-left: 100px;
+}
+.space4_content>div{
+	width: 40%;
+	max-width: 215px;
+	}
+	.space4_content>div img{
+		width: 100%;
+		margin-bottom: 6px;
+		
+	}
+	.img4_1{
+		position: absolute;
+		top: 0;
+		width: 400px;
+		left: -43px;
+		/*z-index: -1;*/
+	}
+		.img4_2{
+			position: absolute;
+			width: 400px;
+			bottom: 0;
+			right: -100px;
+		}
+		.space5_content{
+			padding-top:340px;
+		/*	padding-bottom: 18.375em;*/
+		}
+		.space5 .space-wrap>img{
+			position: absolute;
+			width: 400px;
+			right: -43px;
+			top: 0;
+		}
+		@media screen and (min-width: 640px) and (max-width: 960px) {
+			.space_content h3{
+				font-size: 1.1em;
+			}
+			.space_content span{
+				font-size: 0.9em;
+				line-height: 1em;
+			}
+			.space-wrap{
+				min-height: 600px;
+				width: 85%;
+			}
+			.space1_content{
+				padding-top: 7em;
+				padding-bottom: 0;
+			}
+			.space1_content>div{
+				padding-top: 1.5em;
+				padding-left: 2%;
+			}
+			
+			.space2_content{
+				padding: 10em 0;
+				position: relative;
+				z-index: 100;
+			}
+			.space3_content{
+				 padding-top: 8.625em;
+    				padding-bottom: 10.35em;
+   				 padding-left: 13.5625em;
+			}
+			.space3_content span{
+				width: 80%;
+			}
+				.space4_content{
+				padding-top: 188px;
+				}
+				.space5_content{
+					padding: 7.5em 0 21.375em;
+				}
+		}
+		@media screen and (max-width:639px ) {
+			.content{
+				padding-top: 3.2em;
+			}
+			.space1,.space2,.space3,.space4,.space5{
+				max-height: 500px;
+				min-height: 350px;
+			}
+			.space-wrap{
+				width: 98%;
+			}
+			.space-wrap span{
+				font-size: 0.8em;
+				line-height: 1em;
+			}
+			.space_content h3{
+				font-size: 0.9em;
+				line-height: 1.5em;
+			}
+			/*space1*/
+			.space1_content>span{
+				width: 55%;
+			
+			}
+			.space1_content>div{
+				width: 50%;
+				padding-top: 1.5em;
+			}
+			.space-wrap1>img{
+				width: 270px;
+				right: -80px;
+			}
+			/*space2*/
+			.space2_content>span,.space2_content>div{
+				width: 75%;
+			}
+			.space2_content{
+				padding-top: 4em;
+				position: relative;
+				z-index: 100;
+			}
+		body .space2 .space-wrap2>img{
+				width: 270px;
+				right: -45px;
+			}
+			/*space3*/
+			.space3_content{
+				padding-top: 9.25em;
+				padding-left: 7.5125em;
+				padding-bottom: 2.5em;
+				position: relative;
+				z-index: 100;
+			}
+			.space3 .space-wrap3>img{
+			width: 280px;
+}
+.space3_content>span{
+				width: 94%;	
+		}
+		/*space4*/
+		.space4_content>span{
+				width: 40%;
+		}
+		.space4_content{
+			padding-top: 196px;
+			padding-left: 0;
+		}
+		.space4 .space-wrap4 .img4_1{
+			width: 284px;
+			left: -60px;
+		}
+		.space4 .space-wrap4 .img4_2{
+			width: 290px;
+			right: -100px;
+		}
+		/*space5*/
+		.space5_content{
+			padding-top: 88px;
+		}
+		.space5 .space-wrap5 img{
+		width: 290px;
+		right: -59px;
+		}

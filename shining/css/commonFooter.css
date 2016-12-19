@@ -1,0 +1,39 @@
+.footer{
+	width: 100%;
+}
+.footer1{
+	text-align: center;
+	margin-top: 45px;
+	width: 100%;
+}
+.footer1 img{
+	width: 25px;
+	height: 19px;
+}
+.footer2{
+	margin-top: 12px;
+}
+.footer2 .footer_wrap{
+	width: 137px;
+	min-width: 137px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.footer2 .footer_wrap>a{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+.footer3{
+	height: 4em;
+	line-height: 4em;
+	text-align: center;
+}
+.footer3 span{
+	text-align: center;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color:#808080;
+}
+

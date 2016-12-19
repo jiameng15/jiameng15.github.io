@@ -1,0 +1,172 @@
+	* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.content {
+				width: 980px;
+				margin: 0 auto;
+				border-bottom: 1px solid #e1e1e1;
+				font-family: Arial, sans-serif, Microsoft YaHei;
+			}
+		
+			.row1 {
+				width: 100%;
+				border-bottom: 1px solid #E1E1E1;
+				/*height: 159px;*/
+				overflow: hidden;
+				position: relative;
+			}
+			
+			
+			.row1 .leftImg {
+				width: 588px;
+				height: 100%;
+				float: left;
+				max-width: 667px;
+				max-height: 212px;
+				position: relative;
+			}
+			
+			.row1 .centerLine {
+				height: 159px;
+				background-color: rgb(176, 176, 176);
+				width: 21px;
+				float: left;
+			}
+			
+			.row1 .rightText {
+				width: 34%;
+				height: 100%;
+				float: left;
+				padding-left: 2%;
+			}
+			.row1 .leftImg a {
+				position: relative;
+				display: inline-block;
+				padding: 0;
+			}
+			
+			.row1 .leftImg a .img2 {
+				width: 588px;
+				vertical-align:top;
+			}
+			
+			.row1 .leftImg a .img1 {
+				
+				
+				position: absolute;
+				top: 0px;
+				left: 0;
+				width: 588px;
+				vertical-align:top;
+			}
+			
+			.row1 .center_text {
+				text-align: right;
+				padding-left: 0;
+				padding-right: 2%;
+			}
+			
+			.row1 h6 {
+				font-size: 1.875em;
+				font-weight: bold;
+				padding-top: 0.5em;
+			}
+			
+			.row1 p {
+				font-family: "微软雅黑";
+				font-size: 0.9375em;
+				line-height: 1.8em;
+				padding-top: 0.5em;
+			}
+			.row2{
+				position: relative;
+			}
+			.row2 .rightText{
+				float: left;
+			}
+			.row2 .centerLine{
+				height: 174px;
+				float: right;
+			}
+			.row2 .leftImg{
+				float: right;
+			}
+			.row3 .centerLine{
+			height: 100%;
+			}
+			.img1 {
+				z-index: 1;
+			}
+			
+			.img2 {
+				z-index: 0;
+			}
+			
+			.row1 img {
+				transition: all 0.35s;
+			}
+			
+			li {
+				list-style: none;
+			}
+			@media screen and (max-width:640px ) {
+				.content .centerWrap .leftImg .img1{
+					opacity: 0;
+				}
+				.content .centerWrap .leftImg .img2{
+				opacity: 1;
+				z-index: 100;
+			}
+				body .row1 .centerLine{
+				display: none;
+				float: none;
+				}
+				body .content{
+					padding-top: 48px;
+					width: 100%;
+				}
+				body .centerWrap{
+					width: 90%;
+					margin: 0 auto;
+				}
+				body .row1{
+					position: relative;
+					top: 0;
+					display: block;
+					width: 100%;
+					float: none;
+					overflow: hidden;
+					/*height: 180px;*/
+				}
+				body .row1 .leftImg{
+					position: relative;
+					display: block;
+					width: 100%;
+				}
+				body .row1 .leftImg a .img1,body .row1 .leftImg a .img2{
+					width: 100%;
+					top: 0;
+				}
+				body .row1 .rightText{
+					display: block;
+					width: 95%;
+					text-align: center;
+				}
+				body .row1 .rightText h6{
+					padding-top: 5%;
+					font-size: 1.3em;
+				}
+				body .row1 .rightText p{
+					font-size: 0.8em;
+					line-height: 1.2em;
+					padding: 2em 0;
+					text-align: left;
+				}
+			}

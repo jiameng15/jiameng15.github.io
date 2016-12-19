@@ -96,7 +96,6 @@
 </div>
 <script>
     window.addEventListener("scroll", function(event){
-
         var top = this.pageYOffset;
 
         var layers = document.getElementsByClassName("parallax");
@@ -106,22 +105,23 @@
             speed = layer.getAttribute('data-speed');
             var yPos = -(top*speed / 100);
             layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
-
         }
     });
-
-    window.onload()
-
-
-    document.body.onscroll = function(){
-        console.log(document.body.scrollTop);
-        timer = setInterval(function () {
-            document.body.scrollTop++;
-            if(document.body.scrollTop>=300){
-                clearInterval(timer);
-            }
-        },20)
+    var position = 0;
+    function scroller()
+    {
+        var down = true;
+        if(down)
+        {
+            position+=5;
+            console.log(position)
+            scroll(0,position);
+            clearTimeout(timer);
+            var timer = setTimeout("scroller()",20);
+            if (position>=270){clearTimeout(timer);}
+        }
     }
+    scroller();
 </script>
 </body>
 </html>

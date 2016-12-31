@@ -232,7 +232,7 @@ body {
 .page4 .elm12{
     left: 250px;
     top: 666px;
-    opacity: 0;webkit-animation-delay:3s; animation-delay:3s;}
+    opacity: 0;-webkit-animation-delay:3s; animation-delay:3s;}
 .page4 .elm13{
     left: 427px;
     top: 705px;opacity: 0;-webkit-animation-delay:3.25s; animation-delay:3.25s;}

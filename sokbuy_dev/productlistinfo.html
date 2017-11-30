@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单详细</title>
+		<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=320">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			* {
+				font-family: "Microsoft YaHei";
+			}
+			
+			.mui-table-view-cell.mui-active{
+				background-color: rgba(0,0,0,0);
+			}
+			.mui-table-view-cell.mui-collapse.mui-active{
+				margin: 0;
+			}	
+			.mui-table-view .mui-table-view-cell {
+				height: 88px;
+				line-height: 66px;
+				padding: 11px 30px;
+			}
+			
+			.mui-table-view .mui-table-view-cell.second_cell {
+				height: 120px;
+				line-height: 120px;
+				padding: 0px 30px;
+			}
+			
+			.mui-table-view .mui-table-view-cell.second_cell img {
+				width: 120px;
+				height: 120px;
+				float: left;
+			}
+			.mui-table-view .mui-table-view-cell.second_cell div{
+				display: inline-block;
+			}
+			.mui-table-view .mui-table-view-cell.second_cell span {
+				font-size: 26px;
+				height: 120px;
+				line-height: 120px;
+			}
+			
+			.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell {
+				/*height: 100%;
+				line-height: 100%;*/
+				padding: 0px 0px;
+			}
+			
+			.mui-table-view .mui-table-view-cell:last-child {
+				height: auto;
+			}
+			
+			.mui-content>.mui-table-view:first-child {
+				margin: 0;
+			}
+			
+			.mui-table-view-cell:after {
+				left: 0;
+			}
+			/*.mui-table{
+				width: 100%;
+				height: 100%;
+			}*/
+			
+			.mui-table-view-cell.mui-collapse .mui-table-view {
+				display: block;
+				position: relative;
+			}
+			
+			.mui-table-view-cell.mui-collapse .mui-table-view.mui-table-view-chevron {
+				margin: 0;
+			}
+			
+			.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell:after{
+				left: 0;
+				background-color: rgba(0,0,0,0);
+			}
+			
+			.font_size_24 {
+				font-size: 24px;
+			}
+			
+			.font_size_26 {
+				font-size: 26px;
+			}
+			
+			.font_size_28 {
+				font-size: 28px;
+			}
+			
+			.font_color_black {
+				color: #000;
+			}
+			
+			.font_color_red {
+				color: #ff0000;
+			}
+			
+			.font_color_normal {
+				color: #999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--<div class="title">
+				右侧无导航箭头
+			</div>-->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">订单号</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_num" class="font_size_28 font_color_black">SH18283900040400</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">手机号</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_phone" class="font_size_28 font_color_black">18888888888</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">订单金额</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span class="font_size_28 font_color_black"></span><span id="order_price" class="font_size_28 font_color_black">20.00</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">交易状态</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_status" class="font_size_28 font_color_black">已付款</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">支付类型</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><img src="images/wxpay.png" alt="" style="-webkit-transform: translateY(7px);margin-right: 12px;" /><span id="order_statustype" class="font_size_28 font_color_black">微信支付</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">货架名称</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_shelves" class="font_size_28 font_color_black">A座2F走廊 1号货架</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">店铺名称</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_shop" class="font_size_28 font_color_black">阳光乐选</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">创建时间</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_createdate" class="font_size_28 font_color_black">2017-09-11  10:00:00</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-6">
+							<p class="table_p1"><span class="font_size_26">支付时间</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right">
+							<p class="table_p1"><span id="order_paydate" class="font_size_28 font_color_black">2017-09-11  10:00:00</span></p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<div class="mui-table">
+
+						<div class="mui-table-cell mui-col-xs-6" style="display: inline-block;">
+							<p class="table_p1"><span class="font_size_26">商品详情</span></p>
+
+						</div>
+						<div class="mui-table-cell mui-col-xs-6 mui-text-right" style="display: inline-block;">
+							<p class="font_size_28 font_color_black">共<span id="order_number" class="font_size_28 font_color_black">3</span>件商品</p>
+
+						</div>
+						<div class="mui-table-cell" style="display: inline;">
+
+							<ul class="mui-table-view mui-table-view-chevron">
+								<li class="mui-table-view-cell second_cell">
+									<img src="images/goods1.png" alt="" />
+									<div>
+										<span style="padding-left: 25px;margin-right: 125px;">日式梅干</span>
+										<span>x</span><span>1</span>
+										<span style="margin-left: 100px;">￥</span><span>3.0</span>
+									</div >
+								</li>
+								<li class="mui-table-view-cell second_cell">
+									<img src="images/goods1.png" alt="" />
+									<div>
+										<span style="padding-left: 25px;margin-right: 125px;">日式梅干</span>
+										<span>x</span><span>1</span>
+										<span style="margin-left: 100px;">￥</span><span>3.0</span>
+									</div >
+								</li>
+								<li class="mui-table-view-cell second_cell">
+									<img src="images/goods1.png" alt="" />
+									<div>
+										<span style="padding-left: 25px;margin-right: 125px;">日式梅干</span>
+										<span>x</span><span>1</span>
+										<span style="margin-left: 100px;">￥</span><span>3.0</span>
+									</div >
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</li>
+
+			</ul>
+
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+	</script>
+
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单列表</title>
+		<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=320">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--时间选择器css-->
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css">
+
+		<style>
+			* {
+				font-family: "Microsoft YaHei";
+				
+			}
+			
+			html,
+			body,
+			.mui-content {
+				height: 0px;
+				margin: 0px;
+				background-color: #f5f5f5;
+			}
+			
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.mui-btn {
+				padding: 0px;
+				margin: 0px;
+				height: 88px;
+				line-height: 88px;
+				background-color: rgba(0, 0, 0, 0);
+				border: none;
+			}
+			
+			.ui-alert {
+				position: absolute;
+				left: 30px;
+				top: 0;
+				text-align: center;
+				font-size: 28px;
+			}
+			
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			
+			.mui-table h4,
+			.mui-table h5,
+			.mui-table .mui-h5,
+			.mui-table .mui-h6,
+			.mui-table p {
+				margin-top: 0;
+			}
+			
+			.mui-table h4 {
+				line-height: 21px;
+				font-weight: 500;
+			}
+			
+			.mui-table .oa-icon {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+			
+			.mui-table .oa-icon-star-filled {
+				color: #f14e41;
+			}
+			
+			.mui-pciker-list li {
+				font-size: 28px;
+			}
+			/*timepick css reset*/
+			
+			.mui-dtpicker.mui-active {
+				-webkit-transform: translateY(90px);
+			}
+			.mui-dtpicker .mui-picker{
+				height: 80%;
+				background-color: #f5f5f5;
+			}
+			.nodeal_mask {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: #fff url(images/nodeal.png) no-repeat center 306px;
+				background-size: 350px 326px;
+				z-index: 999999;
+				visibility: hidden;
+			}
+			
+			.nodeal_mask.nodeal_mask_show {
+				visibility: visible;
+			}
+			
+			.mui-dtpicker-header {
+				top: 65px;
+				background-color: #efefef;
+			}
+			
+			.mui-dtpicker-header button {
+				font-size: 28px;
+				width: 50%;
+			}
+			
+			.mui-dtpicker-header button:nth-child(1) {
+				color: #999;
+				line-height: 78px;
+				border-radius: 0;
+				border-top: solid 1px #ddd;
+				border-right: solid 1px #ddd;
+			}
+			
+			.mui-dtpicker-header button:nth-child(2) {
+				color: #000;
+				line-height: 78px;
+				border-radius: 0;
+				border-top: solid 1px #ddd;
+			}
+			
+			.mui-pciker-rule-ft {
+				border-top: solid 1px rgba(0, 0, 0, 1);
+				border-bottom: solid 1px rgba(0, 0, 0, 1);
+			}
+			
+			.mui-pciker-list li {}
+			
+			.mui-dtpicker.mui-active {
+				background-color: #f5f5f5;
+			}
+			
+			.mui-backdrop {
+				background-color: rgba(0, 0, 0, 0);
+			}
+			.mui-table-view{
+				background-color: #f5f5f5;
+			}
+			.mui-table-view-cell {
+				height: 120px;
+				padding: 12px 30px;
+				margin-bottom: 20px;
+				background-color: #fff;
+			}
+			.mui-content>.mui-table-view:first-child{
+				margin-top: 0px;
+				background-color: #f5f5f5;
+			}
+			.font_size_24{
+				font-size: 24px;
+			}
+			.font_size_26{
+				font-size: 26px;
+			}
+			.font_size_28{
+				font-size: 28px;
+			}
+			.font_color_black{
+				color: #000;
+			}
+			.font_color_red{
+				color: #ff0000;
+			}
+			.table_p1{
+				height: 50px;line-height: 50px;
+			}
+			.table_p2{
+				height: 44px;line-height: 44px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">订单列表</h1>
+		</header>-->
+		<div class="nodeal_mask"></div>
+		<button id='demo6' class="btn mui-btn mui-btn-block" style="background:url(images/calendar.png) no-repeat 95.3125% center;background-size: 36px 36px;"><div id='result' class="ui-alert"></div></button>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<a href="productlistinfo.html">
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-10">
+							<p class="table_p1"><span class="font_size_26 font_color_black">订单号：</span><span class="font_size_26 font_color_black">SH18283900040400</span></p>
+							<p class="table_p2"><span id="creat_date" class="font_size_26">2017-9-14</span><span id="creat_time" class="font_size_26">
+								15:11:00
+							</span></p>
+						</div>
+						<div class="mui-table-cell mui-col-xs-2 mui-text-right">
+							<p class="table_p1"><span class="font_size_24 font_color_black">￥</span><span id="order_price" class="font_size_24 font_color_black">200.00</span></p>
+							<p class="table_p2"><span id="status" class="font_size_24 font_color_black">
+								已付款
+							</span></p>
+						</div>
+					</div>
+				</li>
+				</a>
+				<li class="mui-table-view-cell">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-10">
+							<p class="table_p1"><span class="font_size_26 font_color_black">订单号：</span><span class="font_size_26 font_color_black">SH18283900040400</span></p>
+							<p class="table_p2"><span id="creat_date" class="font_size_26">2017-9-14</span><span id="creat_time" class="font_size_26">
+								15:11:00
+							</span></p>
+						</div>
+						<div class="mui-table-cell mui-col-xs-2 mui-text-right">
+							<p class="table_p1"><span class="font_size_24 font_color_black">￥</span><span id="order_price" class="font_size_24 font_color_black">200.00</span></p>
+							<p class="table_p2"><span id="status" class="font_size_24 font_color_red">
+								未付款
+							</span></p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/mui.min.js"></script>
+	<!--<script>
+		$(function() {
+			var now = new Date(),
+				max = new Date(now.getFullYear() + 100, now.getMonth());
+
+			$('#demo6').mobiscroll().date({
+				theme: 'ios',
+				lang: 'zh',
+				display: 'bottom',
+				max: max
+			});
+		});
+	</script>-->
+	<script src="js/mui.picker.min.js"></script>
+	<script>
+		(function($) {
+			$.init();
+			var result = $('#result')[0];
+			var myDate = new Date();
+			var theYear = myDate.getFullYear();
+			var theMonth = myDate.getMonth() + 1;
+			result.innerText = theYear + '年' + theMonth + '月'
+			var btns = $('.btn');
+			btns.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var _self = this;
+					if(_self.picker) {
+						_self.picker.show(function(rs) {
+							result.innerText = rs.y.text + '年' + rs.m.text + '月';
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					} else {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						_self.picker = new $.DtPicker({
+							"type": "month",
+							"endDate": new Date(theYear, theMonth - 1)
+						});
+						_self.picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = rs.y.text + '年' + rs.m.text + '月';
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					}
+
+				}, false);
+			});
+
+		})(mui);
+
+		//ajax 无数据时
+		if(false) {
+			$(".nodeal_mask").addClass("nodeal_mask_show")
+		}
+	</script>
+
+</html>

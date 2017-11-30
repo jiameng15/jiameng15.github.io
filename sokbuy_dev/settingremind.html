@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--去除ios手机号识别-->
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=320">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>订单提醒</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			* {
+				font-family: "Microsoft YaHei";
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.mui-content {
+				background-color: #fff;
+			}
+			
+			ul {
+				width: 100%;
+				font-size: 28px;
+				color: #000000;
+			}
+			
+			ul li {
+				width: 100%;
+				height: 80px;
+				line-height: 80px;
+			}
+			
+			.mui-table-view-cell {
+				padding: 0px 30px;
+			}
+			
+			.mui-table-view-cell>a:not(.mui-btn) {
+				height: 80px;
+				line-height: 58px;
+				padding: 0px 30px;
+			}
+			/*箭头颜色*/
+			
+			.mui-navigate-right:after,
+			.mui-push-left:after,
+			.mui-push-right:after {
+				color: #666;
+			}
+			
+			.mui-table-view:before {
+				background-color: #fff;
+			}
+			
+			.mui-table-view-cell:after {
+				left: 0px;
+				background-color: #ddd;
+			}
+			
+			.mui-table-view:after {
+				background-color: #fff;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+				color: #000000;
+			}
+			
+			.main_header {
+				width: 100%;
+				height: 569px;
+				background-color: #fff;
+				background: url(images/setting_remind_bg.png);
+				text-align: center;
+				padding-top: 230px;
+			}
+			
+			.main_header .main_header_headImg {
+				width: 205px;
+				height: 205px;
+				margin: 0 auto;
+				background-color: #fff;
+			}
+			
+			.main_header .main_header_headImg img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.main_header .main_header_phoneNum {
+				font-size: 24px;
+				line-height: 30px;
+				color: #fff;
+				margin-top: 42px;
+			}
+			
+			.main_header .main_header_phoneNum img {
+				width: 21px;
+				height: 32px;
+				-webkit-transform: translateY(5px);
+			}
+			
+			.setting_remind {
+				width: 30px;
+				height: 36px;
+				margin-right: 8px;
+				background: url(images/setting_remind.png);
+				display: inline-block;
+				-webkit-transform: translateY(8px);
+			}
+			
+			.setting_reset {
+				width: 30px;
+				height: 36px;
+				margin-right: 8px;
+				background: url(images/setting_reset.png);
+				display: inline-block;
+				-webkit-transform: translateY(8px);
+			}
+			
+			.mui-btn {
+				width: 540px;
+				height: 80px;
+				margin: 300px auto 0;
+				background-color: #ddd;
+				border: none;
+				border-radius: 5px;
+				font-size: 30px;
+				color: #000;
+				/*font-weight: bold;*/
+			}
+			
+			#headImg {
+				width: 48px;
+				height: 48px;
+				border-radius: 50%;
+			}
+			
+			#headImg img {
+				width: 48px;
+				height: 48px;
+				padding: auto 0;
+				border-radius: 50%;
+				-webkit-transform: translateY(16px);
+			}
+			
+			#name {
+				width: 450px;
+				line-height: 80px;
+				padding-left: 25px;
+				font-size: 28px;
+			}
+			
+			#remove {
+				font-size: 24px;
+				color: #666;
+				text-align: right
+			}
+			
+			.mui-popup {
+				width: 540px;
+				border-radius: 0px;
+			}
+			
+			.mui-popup-inner {
+				height: 150px;
+				line-height: 150px;
+				font-size: 30px;
+				padding: 0px;
+				border-radius: 0px;
+			}
+			
+			.mui-popup-inner .mui-popup-text {
+				font-size: 30px;
+			}
+			
+			.mui-popup-buttons {
+				height: 80px;
+			}
+			
+			.mui-popup-button {
+				height: 80px;
+				line-height: 80px;
+				font-size: 30px;
+			}
+			
+			.mui-popup-button:nth-child(1) {
+				color: #999;
+				border-radius: 0px;
+			}
+			
+			.mui-popup-button:nth-child(2) {
+				color: #000;
+				border-radius: 0px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="main_header">
+			<div class="main_header_headImg">
+				<img src="images/ewm.png" alt="" />
+			</div>
+			<div class="main_header_phoneNum">
+				<span style="color: #d4282d;display: block;">微信扫码绑定公众号，接受订单提醒消息</span>
+				<span style="color: #d4282d;display: block;margin-top: 20px;"> 此码还可绑定<span id="countNum">n</span>个微信号</span>
+			</div>
+		</div>
+		<div class="mui-content">
+			<ul id="OA_task_2" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell" id="headImg">
+							<img class="headImgs" src="images/timg.jpg" alt="" />
+						</div>
+						<div class="mui-table-cell" id="name">
+							二狗
+						</div>
+						<div id="remove">移除</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell" id="headImg">
+							<img class="headImgs" src="images/timg.jpg" alt="" />
+						</div>
+						<div class="mui-table-cell" id="name">
+							二狗
+						</div>
+						<div id="remove">移除</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell" id="headImg">
+							<img class="headImgs" src="images/timg.jpg" alt="" />
+						</div>
+						<div class="mui-table-cell" id="name">
+							二狗
+						</div>
+						<div id="remove">移除</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell" id="headImg">
+							<img class="headImgs" src="images/timg.jpg" alt="" />
+						</div>
+						<div class="mui-table-cell" id="name">
+							二狗
+						</div>
+						<div id="remove">移除</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell" id="headImg">
+							<img class="headImgs" src="images/timg.jpg" alt="" />
+						</div>
+						<div class="mui-table-cell" id="name">
+							二狗
+						</div>
+						<div id="remove">移除</div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init();
+			(function($) {
+				//扫码返回
+				function scan() {
+					if(true) {
+						//增加数据
+
+					} else {
+						mui.toast('绑定人数已达上限', {
+							duration: 'short',
+							type: 'div'
+						})
+					}
+				}
+
+				var btnArray = ['取消', '确认'];
+				var cellArrLen= document.getElementsByClassName('mui-table-view-cell').length;
+				var countNum = document.getElementById('countNum');
+				countNum.innerText = 5-cellArrLen;
+				console.log($('#countNum').innerText)
+				console.log(cellArrLen)
+				$('#OA_task_2').on('tap', '#remove', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确定要删除此微信号？', ' ', btnArray, function(e) {
+						if(e.index == 1) {
+							li.parentNode.removeChild(li);
+							function countNumChange(){
+								var cellArrLen= document.getElementsByClassName('mui-table-view-cell').length
+								countNum.innerText = 5-cellArrLen;
+							}
+							countNumChange()
+							//后台交互
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+
+			})(mui);
+		</script>
+	</body>
+
+</html>

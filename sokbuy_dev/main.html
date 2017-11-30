@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=320">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>阳光乐选-行政助手</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			* {
+				font-family: "Microsoft YaHei";
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.mui-content {
+				background-color: #fff;
+			}
+			
+			ul {
+				font-size: 14px;
+				color: #8f8f94;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+			}
+			
+			.main_header {
+				width: 100%;
+				height: 320px;
+				background: url(images/main_bg.png);
+				text-align: center;
+				padding-top: 115px;
+			}
+			
+			.main_header p:nth-child(1) {
+				font-size: 46px;
+				line-height: 46px;
+				color: #ffea00;
+				font-weight: bold;
+			}
+			
+			.main_header p:nth-child(2) {
+				font-size: 32px;
+				line-height: 32px;
+				color: #ffea00;
+			}
+			
+			.mui-content .mui-content-padded {
+				padding-top: 20px;
+			}
+			
+			.mui-content ul {
+				width: 100%;
+				height: 365px;
+				margin-top: 20px;
+			}
+			
+			.mui-content ul li {
+				width: 33.333%;
+				height: 182px;
+			}
+			
+			.mui-grid-view.mui-grid-9 {
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				border-bottom: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+				padding: 40px;
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(1),
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(2),
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(3) {
+				border-top: 1px solid #ddd;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(1),
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(4) {
+				border-left: none;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(3),
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell:nth-child(6) {
+				border-right: none;
+			}
+			
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				font-size: 22px;
+				line-height: 22px;
+				height: 22px;
+				margin-top: 16px;
+			}
+			
+			.mui-grid-view.mui-grid-9:after {
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			.mui-icon-like {
+				margin: 0 auto;
+				width: 40px;
+				height: 44px;
+				background: url(images/main_like.png) no-repeat center center;
+			}
+			
+			.mui-icon-storage {
+				width: 48px;
+				height: 44px;
+				margin: 0 auto;
+				background: url(images/main_storage.png) no-repeat center center;
+			}
+			
+			.mui-icon-user {
+				width: 52px;
+				height: 44px;
+				margin: 0 auto;
+				background: url(images/main_user.png) no-repeat center center;
+			}
+			
+			.mui-icon-manage {
+				width: 37px;
+				height: 44px;
+				margin: 0 auto;
+				background: url(images/main_manage.png) no-repeat center center;
+			}
+			
+			.mui-icon-data {
+				width: 45px;
+				height: 44px;
+				margin: 0 auto;
+				background: url(images/main_data.png) no-repeat center center;
+			}
+			
+			.mui-icon-setting {
+				width: 45px;
+				height: 44px;
+				margin: 0 auto;
+				background: url(images/main_setting.png) no-repeat center center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main_header">
+			<p>欢迎进入行政助手</p>
+			<p>从此让办公指尖化</p>
+		</div>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="goodslist.html">
+						<div class="mui-icon-like"></div>
+						<div class="mui-media-body">选你喜欢</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="storage.html">
+						<div class="mui-icon-storage"></div>
+						<div class="mui-media-body">货架管理</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="user.html">
+						<div class="mui-icon-user"></div>
+						<div class="mui-media-body">用户管理</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="productlist.html">
+						<div class="mui-icon-manage"></div>
+						<div class="mui-media-body">订单管理</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="data.html">
+						<div class="mui-icon-data"></div>
+						<div class="mui-media-body">数据统计</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="setting.html">
+						<div class="mui-icon-setting"></div>
+						<div class="mui-media-body">系统设置</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=320">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>重置密码</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			* {
+				font-family: "Microsoft YaHei";
+			}
+			
+			.ui-page-login,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+				background-color: #fff;
+			}
+			
+			.mui-content {
+				height: 100%;
+				background-color: #fff;
+			}
+			
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			
+			.mui-input-group {
+				margin-top: 10px;
+			}
+			
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.mui-input-group label {
+				width: 22%;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 100%;
+				height: 7.042253521126761%;
+			}
+			
+			.mui-input-group .mui-input-row {
+				height: 7.042253521126761%;
+				margin-bottom: 20px;
+				border: solid 1px #ddd;
+				border-radius: 10px;
+			}
+			
+			.mui-input-group .mui-input-row:nth-child(2) {
+				margin-bottom: 40px;
+				width: 320px;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			
+			.mui-content-padded {
+				margin: 0 0 0 0;
+			}
+			
+			.mui-btn {
+				/*padding: 10px;*/
+				border-radius: 10px;
+			}
+			
+			.link-area {
+				display: block;
+				margin-top: 25px;
+				text-align: center;
+			}
+			
+			.spliter {
+				color: #bbb;
+				padding: 0px 8px;
+			}
+			
+			.oauth-area {
+				position: absolute;
+				bottom: 20px;
+				left: 0px;
+				text-align: center;
+				width: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.oauth-area .oauth-btn {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background-size: 30px 30px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				margin: 0px 20px;
+				/*-webkit-filter: grayscale(100%); */
+				border: solid 1px #ddd;
+				border-radius: 25px;
+			}
+			
+			.oauth-area .oauth-btn:active {
+				border: solid 1px #aaa;
+			}
+			
+			.oauth-area .oauth-btn.disabled {
+				background-color: #ddd;
+			}
+			
+			.logo {
+				width: 100%;
+				padding: 55px 0 60px 0;
+				text-align: center;
+			}
+			
+			.logo img {
+				width: 25%;
+			}
+			
+			#login {
+				width: 84.375%;
+				height: 80px;
+				margin: 0 auto;
+				font-size: 30px;
+			}
+			
+			#forgetPassword {
+				color: #999;
+				font-size: 24px;
+			}
+			
+			#login-form {
+				width: 84.375%;
+				margin: 0 auto;
+			}
+			
+			.mui-input-row .mui-input-clear~.mui-icon-clear,
+			.mui-input-row .mui-input-password~.mui-icon-eye,
+			.mui-input-row .mui-input-speech~.mui-icon-speech {
+				font-size: 38px;
+				position: absolute;
+				z-index: 1;
+				top: 21px;
+				right: 30px;
+				width: 38px;
+				height: 38px;
+				text-align: center;
+				color: #b5b6b6;
+			}
+			
+			input[type=color],
+			input[type=date],
+			input[type=datetime-local],
+			input[type=datetime],
+			input[type=email],
+			input[type=month],
+			input[type=number],
+			input[type=password],
+			input[type=search],
+			input[type=tel],
+			input[type=text],
+			input[type=time],
+			input[type=url],
+			input[type=week],
+			select,
+			textarea {
+				line-height: 28px;
+				width: 100%;
+				height: 80px;
+				padding: 10px 30px;
+				border: none;
+				/*border-radius: 5px;*/
+				-webkit-user-select: text;
+				outline: 0;
+				background-color: #fff;
+				-webkit-appearance: none;
+			}
+			
+			.mui-input-group:before {
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			.mui-input-group:after {
+				background-color: rgba(0, 0, 0, 0);
+			}
+			
+			.mui-btn-blue,
+			.mui-btn-primary,
+			input[type=submit] {
+				color: #fff;
+				border: 1px solid #000;
+				background-color: #000;
+			}
+			
+			.mui-btn-primary:active {
+				color: #000;
+				border: 1px solid #fbea0a!important;
+				background-color: #fbea0a!important;
+			}
+			
+			.mui-toast-container {
+				line-height: 40px;
+				position: fixed;
+				z-index: 9999;
+				top: 476px;
+				left: 50%;
+				-webkit-transition: opacity .3s;
+				transition: opacity .3s;
+				-webkit-transform: translate(-50%, 0);
+				transform: translate(-50%, 0);
+				opacity: 0;
+			}
+			
+			.mui-toast-container.mui-active {
+				opacity: .9;
+			}
+			
+			.mui-toast-message {
+				font-size: 27px;
+				padding: 10px 25px;
+				text-align: center;
+				color: #fff;
+				border-radius: 6px;
+				background-color: #323232;
+			}
+			
+			#code {
+				position: absolute;
+				top: 182px;
+				right: 50px;
+			}
+			
+			.button-color-disabled {
+				background-color: #ddd;
+				border: #ddd;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<form id='login-form' class="mui-input-group" style="margin-top: 80px;">
+				<div class="mui-input-row" style="">
+					<!--<label>账号</label>-->
+					<input id='account' type="tel" class="mui-input-clear mui-input" style="height: 80px;font-size: 28px;" placeholder="手机号 | Phone" maxlength="11">
+				</div>
+				<div class="mui-input-row">
+					<!--<label>密码</label>-->
+					<input id='password' type="tel" class="mui-input-clear mui-input" style="height: 80px;font-size: 28px;" placeholder="验证码 | Code" maxlength="6">
+
+				</div>
+
+			</form>
+			<button id='code' class="mui-btn mui-btn-primary" onclick=sendCode() style="width: 200px;height: 80px;font-size: 28px;color: #000;border: 1px solid #fbea0a;
+				background-color: #fbea0a">发送验证码</button>
+
+			<div class="mui-content-padded">
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary button-color-disabled" disabled="disabled" onclick=next()>下一步</button>
+
+			</div>
+			<div class="mui-content-padded oauth-area">
+
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+
+		<script type="text/javascript">
+			//按钮置灰
+			$('#account').bind('input propertychange', function() {
+				if($('#account').val() != '') {
+					$('#password').bind('input propertychange', function() {
+						if($('#password').val() != '') {
+							$('#login').removeAttr('disabled').removeClass('button-color-disabled')
+						}
+					})
+				}
+				if($('#account').val() == '') {
+					$('#login').attr('disabled').addClass('button-color-disabled')
+				}
+			});
+
+			//发送验证码
+			function sendCode() {
+				console.log('发送验证码')
+				var mobile = $('#account').val()
+				var regMobile = /^0?1(3|5|7|8)\d{9}$/;
+				if(mobile == '') {
+					mui.toast('请输入手机号', {
+						duration: 'short',
+						type: 'div'
+					})
+					return false
+				} else if(!regMobile.test(mobile)) {
+					mui.toast('手机号不正确', {
+						duration: 'short',
+						type: 'div'
+					})
+					return false
+				} else {
+					//倒计时
+					console.log('倒计时开始')
+					countDown(61)
+
+					//发送验证码
+					$.post("", mobile, function(result) {
+						var data = result.data;
+						if(parseInt(result.status)) {
+							mui.toast(data, {
+								duration: 'short',
+								type: 'div'
+							})
+
+						} else {
+							//手机号不存在
+							mui.toast(data, {
+								duration: 'short',
+								type: 'div'
+							})
+						}
+
+					}, 'json');
+				}
+			}
+
+			//倒计时方法
+			function countDown(s) {
+				console.log(s)
+				s--;
+				if(s == 0) {
+					$('#code').removeAttr('disabled').css({
+						"background-color": "#fbea0a",
+						"border": "solid 1px #fbea0a"
+					})
+					$('#code').text('发送验证码');
+				} else {
+					$('#code').css({
+						"background-color": "#ddd",
+						"border": "solid 1px #ddd"
+					}).attr('disabled', 'disabled')
+					$('#code').text(s + 's');
+					setTimeout(function() {
+						countDown(s)
+					}, 1000)
+				}
+			}
+
+			//表单验证
+			function next() {
+				var post = {
+					mobile: $("#account").val(),
+					password: $("#password").val(),
+				};
+				var regMobile = /^0?1(3|5|7|8)\d{9}$/;
+				if(post.mobile == '') {
+					mui.toast('请输入手机号', {
+						duration: 'short',
+						type: 'div'
+					})
+
+					return false
+				} else if(!regMobile.test(post.mobile)) {
+					mui.toast('手机号不正确', {
+						duration: 'short',
+						type: 'div'
+					})
+
+					return false
+				} else {
+					//本地测试↓
+//					mui.toast('验证通过', {
+//						duration: 'short',
+//						type: 'div'
+//					})
+//					setTimeout(function() {
+//						window.location.href = 'resetnext.html'
+//					}, 1000);
+					//本地测试↑
+					$.post("", post, function(result) {
+						var data = result.data;
+						if(parseInt(result.status)) {
+							mui.toast(data, {
+								duration: 'short',
+								type: 'div'
+							})
+							setTimeout(function() {
+								window.location.href = 'resetnext.html'
+							}, 1000);
+						} else {
+							mui.toast(data, {
+								duration: 'short',
+								type: 'div'
+							})
+						}
+
+					}, 'json');
+				}
+			}
+		</script>
+
+	</body>
+
+</html>
